@@ -74,7 +74,7 @@ Thank you for choosing us as your contact management solution!
 == Features
 contactHeRo is a *Command Line Interface(CLI) application*. Hence you need to type in the commands in order to use its features.
 
-Below is the interface(refer to figure 2) that contactHeRo provides for you to type your command. 
+Below is the interface(refer to figure 2) that contactHeRo provides for you to type your command.
 
 .Command Box in contactHeRo
 image::commandBox.png[width="790", align="center"]
