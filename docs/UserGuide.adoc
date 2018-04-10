@@ -392,6 +392,8 @@ This will show any person whose skills match any of those required for the job o
 
 === Managing Appointments
 
+This section describes the commands you can use to manage appointments in contactHeRo.
+
 ==== Adding appointment : `addapp`
 You can add appointment by using the following format. +
 
@@ -419,6 +421,7 @@ On running the above command, you should see the following success message: +
  Appointment deleted: Meeting Start Date Time: 2018-04-05 14:00 End Date Time: 2018-04-05 15:00
 
 === Viewing the Calendar
+This section describes the commands you can use view the calendar in contactHeRo.
 
 ==== Opening the calendar: `calendar`
 You can switch to the calendar tab using the following format. +
@@ -501,6 +504,44 @@ image::yearView.png[width="400"]
 
 === Managing Emails
 
+// tag::googlelogin[]
+==== Login to Google : `googlelogin`
+
+You will have to login to google in order to use features like
+emailing. This process is simple and fast like how you normally login
+using the web browser. +
+Format: `googlelogin`
+
+****
+* Opens up the `Google` tab. This is contactHeRo's built-in browser for Google logins. Simply enter your email and password to login.
+* You will have to login in order to use the `Email` command to send email.
+* *IMPORTANT*: Please do not go to other webpage in the `Google` tab after you have logged in. +
++
+This is because contactHeRo has to use the login information from the webpage after you have login to send your email.
+
+* *NOTE*: We do not save or log any of your Google credentials or information as we respect your privacy.
+Therefore, everytime you restart contactHeRo, you will have to login again.
+****
+
+Examples:
+
+* `googlelogin` +
+This will open up the `Google` tab for you to login. On running the above command, you should see the following success message: +
+
+ Please log in to Google.
++
+You should also see the login screen as shown below.
+
+.The Google log in page
+image::googlelogin1.PNG[width="600"]
+
+[NOTE]
+Please do not go to any other webpages in the `Google` tab after you have logged in.
+
+Now that you have logged in, you are ready to use the `Email` feature to send out emails!
+// end::googlelogin[]
+
+// tag::email[]
 ==== Emailing your contact : `email`
 
 You can send email to any person you have saved in contactHeRo using the following format. +
@@ -538,6 +579,7 @@ a pop-up message as shown below.
 
 .Pop-up message
 image::emailSS2.PNG[width="400"]
+// end::email[]
 
 === Utility Features
 
@@ -703,7 +745,8 @@ e.g.`select 2`
 * *<<redoing-the-previously-undone-command-code-redo-code, Redo>>* : `redo`
 * *<<viewing-the-linkedin-search-of-a-person-code-linkedin-code, LinkedIn>>*: `linkedIn INDEX` +
 e.g. `linkedIn 2`
-* *<<emailing-your-contact, Email>>* : `email INDEX` +
+* *<<login-to-google-code-googlelogin-code, Login to Google>>* : `googlelogin` +
+* *<<emailing-your-contact-code-email-code, Email>>* : `email INDEX` +
 e.g. `email 1`
 * *<<adding-a-job-opening, Add job opening>>* : `addjob p/POSITION t/TEAM l/LOCATION n/NUMBER_OF_POSITIONS` +
 e.g. `addjob p/Software Engineer t/Cloud Services l/Singapore n/2`
