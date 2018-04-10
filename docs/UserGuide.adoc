@@ -390,6 +390,7 @@ Examples:
 `matchjob 1` +
 This will show any person whose skills match any of those required for the job opening at index 1.
 
+// tag::calendar[]
 === Managing Appointments
 
 This section describes the commands you can use to manage appointments in contactHeRo.
@@ -501,6 +502,7 @@ Example: `year`
 
 .Year view
 image::yearView.png[width="400"]
+// end::calendar[]
 
 === Managing Emails
 
@@ -712,12 +714,13 @@ _{explain how the user can enable/disable data encryption}_
 
 *Q*: How do I transfer my data to another Computer? +
 *A*: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.
-
+// tag::faq[]
 *Q*: How do I report bugs to the developers? +
 *A*: Please send an email to contactHeRo@gmail.com if you find a bug. Thank you.
 
 To ask more questions, please send your email to contactHeRo@gmail.com. +
 We are willing to help you. +
+// end::faq[]
 
 == contactHeRo Cheat Sheet
 
