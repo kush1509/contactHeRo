@@ -12,6 +12,7 @@ ifdef::env-github[]
 :tip-caption: :bulb:
 :note-caption: :information_source:
 endif::[]
+:source-highlighter: rouge
 :repoURL: https://github.com/CS2103JAN2018-W09-B2/main
 
 By: `Team W09-B2`      Since: `Feb 2018`      Licence: `MIT`
@@ -56,6 +57,7 @@ Not sure how to install Java? Visit the oracle website link below for more infor
 +
 .contactHeRo on launch
 image::Ui.png[width="790", align="center"]
+
 Now you can start using contactHeRo.
 
 .  Type the command in the command box and press kbd:[Enter] to execute it. +
@@ -783,4 +785,3 @@ e.g. `year` or `year 2018`
 e.g `addapp t/Meeting sdt/2018-04-05 14:00 edt/2018-04-05 15:00`
 * *<<deleting-appointment, Deleting appointment>>* : `delapp t/TITLE sdt/START_DATE_TIME edt/END_DATE_TIME` +
 e.g `delapp t/Meeting sdt/2018-04-05 14:00 edt/2018-04-05 15:00`
-
