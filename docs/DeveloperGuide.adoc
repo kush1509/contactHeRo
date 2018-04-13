@@ -122,7 +122,7 @@ This section helps you understand the overall design of contactHeRo.
 === Architecture
 
 .Architecture Diagram
-image::Architecture.png[width="600", align="center"]
+image::Architecture.png[width="800", height="500", align="center"]
 
 The *_Architecture Diagram_* given above explains the high-level design of the App. Given below is a quick overview of each component.
 
@@ -154,7 +154,7 @@ Each of the four components
 For example, the `Logic` component (see the class diagram given below) defines it's API in the `Logic.java` interface and exposes its functionality using the `LogicManager.java` class.
 
 .Class Diagram of the Logic Component
-image::LogicClassDiagram.png[width="800", align="center"]
+image::LogicClassDiagram.png[width="800", height="500", align="center"]
 
 [discrete]
 ==== Events-Driven nature of the design
@@ -162,7 +162,7 @@ image::LogicClassDiagram.png[width="800", align="center"]
 The _Sequence Diagram_ below shows how the components interact for the scenario where the user issues the command `delete 1`.
 
 .Component interactions for `delete 1` command (part 1)
-image::SDforDeletePerson.png[width="800", align="center"]
+image::SDforDeletePerson.png[width="800", height="500", align="center"]
 
 [NOTE]
 Note how the `Model` simply raises a `AddressBookChangedEvent` when contactHeRo data are changed, instead of asking the `Storage` to save the updates to the hard disk.
@@ -170,7 +170,7 @@ Note how the `Model` simply raises a `AddressBookChangedEvent` when contactHeRo 
 The diagram below shows how the `EventsCenter` reacts to that event, which eventually results in the updates being saved to the hard disk and the status bar of the UI being updated to reflect the 'Last Updated' time.
 
 .Component interactions for `delete 1` command (part 2)
-image::SDforDeletePersonEventHandling.png[width="800", align="center"]
+image::SDforDeletePersonEventHandling.png[width="800", height="500", align="center"]
 
 [NOTE]
 Note how the event is propagated through the `EventsCenter` to the `Storage` and `UI` without `Model` having to be coupled to either of them. This is an example of how this Event Driven approach helps us reduce direct coupling between components.
@@ -181,7 +181,7 @@ The sections below give more details of each component.
 === UI component
 
 .Structure of the UI Component
-image::UiClassDiagram.png[width="800", align="center"]
+image::UiClassDiagram.png[width="800", height="500", align="center"]
 
 *API* : link:{repoURL}/src/main/java/seedu/address/ui/Ui.java[`Ui.java`]
 
@@ -200,10 +200,10 @@ The `UI` component,
 
 [[fig-LogicClassDiagram]]
 .Structure of the Logic Component
-image::LogicClassDiagram.png[width="800", align="center"]
+image::LogicClassDiagram.png[width="800", height="500", align="center"]
 
 .Structure of Commands in the Logic Component. This diagram shows finer details concerning `XYZCommand` and `Command` in <<fig-LogicClassDiagram>>
-image::LogicCommandClassDiagram.png[width="800", align="center"]
+image::LogicCommandClassDiagram.png[width="800", height="500", align="center"]
 
 *API* :
 link:{repoURL}/src/main/java/seedu/address/logic/Logic.java[`Logic.java`]
@@ -216,13 +216,13 @@ link:{repoURL}/src/main/java/seedu/address/logic/Logic.java[`Logic.java`]
 Given below is the Sequence Diagram for interactions within the `Logic` component for the `execute("delete 1")` API call.
 
 .Interactions Inside the Logic Component for the `delete 1` Command
-image::DeletePersonSdForLogic.png[width="800", align="center"]
+image::DeletePersonSdForLogic.png[width="800", height="500", align="center"]
 
 [[Design-Model]]
 === Model component
 
 .Structure of the Model Component
-image::ModelClassDiagram.png[width="800", align="center"]
+image::ModelClassDiagram.png[width="800", height="500", align="center"]
 
 *API* : link:{repoURL}/src/main/java/seedu/address/model/Model.java[`Model.java`]
 
@@ -237,7 +237,7 @@ The `Model`,
 === Storage component
 
 .Structure of the Storage Component
-image::StorageClassDiagram.png[width="800", align="center"]
+image::StorageClassDiagram.png[width="800", height="500", align="center"]
 
 *API* : link:{repoURL}/src/main/java/seedu/address/storage/Storage.java[`Storage.java`]
 
@@ -303,11 +303,11 @@ Suppose that the user has just launched the application. The `UndoRedoStack` wil
 
 The user executes a new `UndoableCommand`, `delete 5`, to delete the 5th person in contactHeRo. The current state of contactHeRo is saved before the `delete 5` command executes. The `delete 5` command will then be pushed onto the `undoStack` (the current state is saved together with the command).
 
-image::UndoRedoStartingStackDiagram.png[width="800", align="center"]
+image::UndoRedoStartingStackDiagram.png[width="800", height="500", align="center"]
 
 As the user continues to use the program, more commands are added into the `undoStack`. For example, the user may execute `add n/David ...` to add a new person.
 
-image::UndoRedoNewCommand1StackDiagram.png[width="800", align="center"]
+image::UndoRedoNewCommand1StackDiagram.png[width="800", height="500", align="center"]
 
 [NOTE]
 If a command fails its execution, it will not be pushed to the `UndoRedoStack` at all.
@@ -316,14 +316,14 @@ The user now decides that adding the person was a mistake, and decides to undo t
 
 We will pop the most recent command out of the `undoStack` and push it back to the `redoStack`. We will restore contactHeRo to the state before the `add` command executed.
 
-image::UndoRedoExecuteUndoStackDiagram.png[width="800", align="center"]
+image::UndoRedoExecuteUndoStackDiagram.png[width="800", height="500", align="center"]
 
 [NOTE]
 If the `undoStack` is empty, then there are no other commands left to be undone, and an `Exception` will be thrown when popping the `undoStack`.
 
 The following sequence diagram shows how the undo operation works:
 
-image::UndoRedoSequenceDiagram.png[width="800", align="center"]
+image::UndoRedoSequenceDiagram.png[width="800", height="500", align="center"]
 
 The redo does the exact opposite (pops from `redoStack`, push to `undoStack`, and restores contactHeRo to the state after the command is executed).
 
@@ -332,15 +332,15 @@ If the `redoStack` is empty, then there are no other commands left to be redone,
 
 The user now decides to execute a new command, `clear`. As before, `clear` will be pushed into the `undoStack`. This time the `redoStack` is no longer empty. It will be purged as it no longer make sense to redo the `add n/David` command (this is the behavior that most modern desktop applications follow).
 
-image::UndoRedoNewCommand2StackDiagram.png[width="800", align="center"]
+image::UndoRedoNewCommand2StackDiagram.png[width="800", height="500", align="center"]
 
 Commands that are not undoable are not added into the `undoStack`. For example, `list`, which inherits from `Command` rather than `UndoableCommand`, will not be added after execution:
 
-image::UndoRedoNewCommand3StackDiagram.png[width="800", align="center"]
+image::UndoRedoNewCommand3StackDiagram.png[width="800", height="500", align="center"]
 
 The following activity diagram summarize what happens inside the `UndoRedoStack` when a user executes a new command:
 
-image::UndoRedoActivityDiagram.png[width="650", align="center"]
+image::UndoRedoActivityDiagram.png[width="650", height="500", align="center"]
 
 ==== Design Considerations
 
@@ -404,7 +404,7 @@ The `select` command shows the contact details of the person at the specified in
 The `ContactDetailsDisplay` is a GridPane embedded in the `Contact Details` tab and the UML diagram below represents the UI structure for the `ContactDetailsPanel` (Refer to Figure 30):
 
 .UML Diagram for DetailsPanel UI
-image::DetailsPanelClassDiagram.png[width="600", align="center"]
+image::DetailsPanelClassDiagram.png[width="600", height="500", align="center"]
 
 The `DetailsPanel` also comes into play when the user manually clicks on the `PersonCard` and the panel corresponding `Contact Details` or `LinkedIn` is currently shown. This is implemented by handling the `PersonPanelSelectionChangedEvent` in both the `ContactDetailsPanel` and the `BrowserPanel`.
 
@@ -414,7 +414,7 @@ Both the `select` and `linkedIn` command function quite similarly and only diffe
 The figure below (Refer to figure 31) is the wireframe for the `ContactDetailsDisplay`:
 
 .Wireframe for Contact Details Panel.
-image::ContactDetailsDisplayWireFrame.png[width="600", align="center"]
+image::ContactDetailsDisplayWireFrame.png[width="600", height="500", align="center"]
 
 ==== Design Considerations
 
@@ -440,7 +440,7 @@ image::ContactDetailsDisplayWireFrame.png[width="600", align="center"]
 Tab Switching Mechanism is an event driven mechanism.
 
 .Component interaction for Tab Switching Mechanism.
-image::SwitchTabRequestEventHighSD.png[align="center"]
+image::SwitchTabRequestEventHighSD.png[width="800", height="500", align="center"]
 
 The above diagram (Refer to Figure 13) shows the high-level overview of the component interactions for the tab switching mechanism. We use the event, `SwitchTabRequestEvent` which sets the current tab in the `DetailsPanel` to one of five tabs below depending on the input command.
 include::DeveloperGuide.adoc[tag=tabs]
@@ -467,7 +467,7 @@ The `SwitchTabRequestEvent` has an integer attribute `tabId`. The event handlers
 Let us look at an execution example for the LinkedIn Command.
 
 .Sequence diagram for the event posting for the Tab Switching Mechanism.
-image::SwitchTabRequestEventSD.png[align="center"]
+image::SwitchTabRequestEventSD.png[width="800", height="500", align="center"]
 
 As seen from the sequence diagram above (Refer to Figure 14), when the user types the `linkedIn` command, an instance of LinkedInCommand would be created and upon execution by LogicManager, the event SwitchTabRequestEvent would be posted by the EventCenter to the EventBus:
 
@@ -499,7 +499,7 @@ public class DetailsPanel extends UiPart<Region> {
 Shown below is the sequence diagram for the above implementation (Refer to figure 15).
 
 .Sequence diagram for the event handling for the Tab Switching Mechanism.
-image::SwitchTabRequestEventSD2.png[align="center"]
+image::SwitchTabRequestEventSD2.png[width="800", height="500", align="center"]
 
 ==== Design Considerations
 
@@ -524,14 +524,14 @@ The `Job` object represents a job opening in contactHeRo. It contains `Position`
 All fields mentioned above are compulsory for the `Job` object unlike the `Person` where `skill` is optional.
 
 .UML class diagram for Job Opening
-image::JobUML.png[width="600", align="center"]
+image::JobUML.png[width="600", height="500", align="center"]
 
 In addition to the above attributes, the `Job` object also contains a set of `Skills` which denote the skills required for the job opening.
 
 `Job` objects are kept in-memory during the running of contactHeRo. A `UniqueJobList` is maintained which contains the Job (Refer to Figure 13) and assures that there are no duplicate `Job` objects. The `UniqueJobList` object is then kept and used by ModelManager to carry out commands related to job openings.
 
 .Model management of Job objects
-image::JobModelUML.png[width="600", align="center"]
+image::JobModelUML.png[width="600", height="500", align="center"]
 
 The storage of job openings is very similar to that of the persons. `Job` objects are stored in a XML storage file in a JAXB-friendly version `XmlAdaptedJob`. When the program starts, `XmlAdaptedJob` objects are read in as jobs in the `XmlSerializableAddressBook` via `XmlFileStorage`.
 
@@ -554,7 +554,7 @@ Adding job openings is facilitated by the JobAddCommand. Execution of this comma
 Given below is the sequence diagram for addition of a job opening.
 
 .High Level Sequence Diagram for adding a job opening
-image::SDforAddJobEventHandling.png[align="center"]
+image::SDforAddJobEventHandling.png[width="800", height="500", align="center"]
 
 The following snippet shows how the executeUndoableCommand() method updates the model of the application by adding the job to the list of jobs.
 
@@ -641,7 +641,7 @@ The auto-complete mechanism is implemented in the `CommandBox` in the `UI` compo
 Given below is are the activity diagram (Refer to figurue 20) for the mechanism.
 
 .UML class diagram for Job Opening
-image::Auto-CompleteActivityDiagram.png[align="center"]
+image::Auto-CompleteActivityDiagram.png[width="800", height="500", align="center"]
 
 [NOTE]
 Previous input has been included to account for cases in cases where more than one command share the same prefix. For e.g. the `add`, `addjob` and `addapp` commands share the common `add`. In such a case, the user can just type `a` or `ad` or `add` and press `Tab` multiple times to cycle between these commands which will keep incrementing the Tab counter, `tabNumber` in a cyclic manner.
@@ -825,7 +825,7 @@ where the `Token` is stored in the URL.
 Below is the sequence diagram of the `googlelogin` command:
 
 .Sequence Diagram of the GoogleLoginCommand
-image::GoogleLoginSequence.png[width="600", align="center"]
+image::GoogleLoginSequence.png[width="600", height="500", align="center"]
 
 Next, a `GmailClient` is created using the `GoogleAuthentication` class and `Token`.
 The `Token` is obtained from the redirected URL, meaning that the user must not navigate to other URL
@@ -834,7 +834,7 @@ after they have logged in.
 Below is the class diagram of the `GmailClient`:
 
 .Class Diagram of GmailClient and GoogleAuthentication
-image::GmailClassDiagram.png[width="600", align="center"]
+image::GmailClassDiagram.png[width="600", height="500", align="center"]
 
 This newly created `GmailClient` class will provide all the services that use the Google API.
 
@@ -917,7 +917,7 @@ Here are the steps to convert the project documentation files to PDF format.
 .  Set the destination to `Save as PDF`, then click `Save` to save a copy of the file in PDF format. For best results, use the settings indicated in the screenshot below.
 
 .Saving documentation as PDF files in Chrome
-image::chrome_save_as_pdf.png[width="300", align="center"]
+image::chrome_save_as_pdf.png[width="300", height="500", align="center"]
 
 [[Testing]]
 == Testing
@@ -1086,11 +1086,11 @@ Do take a look at <<Design-Ui>> before attempting to modify the `UI` component.
 +
 **Before**
 +
-image::getting-started-ui-tag-before.png[width="300", align="center"]
+image::getting-started-ui-tag-before.png[width="300", height="500", align="center"]
 +
 **After**
 +
-image::getting-started-ui-tag-after.png[width="300", align="center"]
+image::getting-started-ui-tag-after.png[width="300", height="500", align="center"]
 +
 ****
 * Hints
@@ -1114,11 +1114,11 @@ image::getting-started-ui-tag-after.png[width="300", align="center"]
 +
 **Before**
 +
-image::getting-started-ui-result-before.png[width="200", align="center"]
+image::getting-started-ui-result-before.png[width="200", height="500", align="center"]
 +
 **After**
 +
-image::getting-started-ui-result-after.png[width="200", align="center"]
+image::getting-started-ui-result-after.png[width="200", height="500", align="center"]
 +
 ****
 * Hints
@@ -1138,11 +1138,11 @@ image::getting-started-ui-result-after.png[width="200", align="center"]
 +
 **Before**
 +
-image::getting-started-ui-status-before.png[width="500", align="center"]
+image::getting-started-ui-status-before.png[width="500", height="500", align="center"]
 +
 **After**
 +
-image::getting-started-ui-status-after.png[width="500", align="center"]
+image::getting-started-ui-status-after.png[width="500", height="500", align="center"]
 +
 ****
 * Hints
