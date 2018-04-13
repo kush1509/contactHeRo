@@ -784,4 +784,3 @@ e.g. `year` or `year 2018`
 e.g `addapp t/Meeting sdt/2018-04-05 14:00 edt/2018-04-05 15:00`
 * *<<deleting-appointment, Deleting appointment>>* : `delapp t/TITLE sdt/START_DATE_TIME edt/END_DATE_TIME` +
 e.g `delapp t/Meeting sdt/2018-04-05 14:00 edt/2018-04-05 15:00`
-

@@ -400,7 +400,7 @@ image::UndoRedoActivityDiagram.png[width="650", align="center"]
 ****
 // end::tabs[]
 
-The `select` command shows the contact details of the person at the specified index under the `Contact Details` tab. 
+The `select` command shows the contact details of the person at the specified index under the `Contact Details` tab.
 The `ContactDetailsDisplay` is a GridPane embedded in the `Contact Details` tab and the UML diagram below represents the UI structure for the `ContactDetailsPanel` (Refer to Figure 30):
 
 .UML Diagram for DetailsPanel UI
@@ -437,7 +437,7 @@ image::ContactDetailsDisplayWireFrame.png[width="600", align="center"]
 === Tab Switching Mechanism
 
 ==== Current Implementation
-Tab Switching Mechanism is an event driven mechanism. 
+Tab Switching Mechanism is an event driven mechanism.
 
 .Component interaction for Tab Switching Mechanism.
 image::SwitchTabRequestEventHighSD.png[align="center"]
@@ -450,7 +450,7 @@ The code for the `SwitchTabRequestEvent` event is as follows.
 [source, java]
 ----
 public class SwitchTabRequestEvent extends BaseEvent {
-    public final int tabId; 
+    public final int tabId;
     public SwitchTabRequestEvent(int tabId) {
         this.tabId = tabId;
     }
@@ -530,7 +530,7 @@ In addition to the above attributes, the `Job` object also contains a set of `Sk
 
 `Job` objects are kept in-memory during the running of contactHeRo. A `UniqueJobList` is maintained which contains the Job (Refer to Figure 13) and assures that there are no duplicate `Job` objects. The `UniqueJobList` object is then kept and used by ModelManager to carry out commands related to job openings.
 
-.Model management of Job objects 
+.Model management of Job objects
 image::JobModelUML.png[width="600", align="center"]
 
 The storage of job openings is very similar to that of the persons. `Job` objects are stored in a XML storage file in a JAXB-friendly version `XmlAdaptedJob`. When the program starts, `XmlAdaptedJob` objects are read in as jobs in the `XmlSerializableAddressBook` via `XmlFileStorage`.
@@ -636,7 +636,7 @@ To minimize code duplication, we made a utility class `SkillUtil` which is used 
 
 ==== Current Implementation
 
-The auto-complete mechanism is implemented in the `CommandBox` in the `UI` component. We check the key pressed by the user and if it is the `Tab` key, the auto-complete mechanism is triggered. 
+The auto-complete mechanism is implemented in the `CommandBox` in the `UI` component. We check the key pressed by the user and if it is the `Tab` key, the auto-complete mechanism is triggered.
 
 Given below is are the activity diagram (Refer to figurue 20) for the mechanism.
 
