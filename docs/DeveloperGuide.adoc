@@ -695,6 +695,7 @@ We are using `java.util.logging` package for logging. The `LogsCenter` class is 
 === Configuration
 
 Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: `config.json`).
+
 // tag::profilepicture[]
 === Profile Picture Feature
 Profile picture feature allows to show persons' profile pictures.
