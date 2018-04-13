@@ -114,6 +114,7 @@ public class CommandList {
             return JobFindCommand.COMMAND_SYNTAX;
 
         case AddAppointmentCommand.COMMAND_WORD:
+            return AddAppointmentCommand.COMMAND_WORD;
 
         case UpdatePasswordCommand.COMMAND_WORD:
             return UpdatePasswordCommand.COMMAND_SYNTAX;

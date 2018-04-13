@@ -51,7 +51,7 @@ public class CollectionUtil {
         }
         return true;
     }
-    
+
     // @@author kush1509
     /**
      * Converts a set into list of strings.

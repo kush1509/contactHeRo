@@ -9,7 +9,7 @@ import seedu.address.model.job.Job;
 /**
  * Tests that a {@code Job}'s {@code Skill} matches any of the keywords given.
  */
-public class JobSkillContainsKeywordsPredicate implements Predicate<Job>{
+public class JobSkillContainsKeywordsPredicate implements Predicate<Job> {
     private final List<String> keywords;
 
     public JobSkillContainsKeywordsPredicate(List<String> keywords) {

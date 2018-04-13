@@ -21,7 +21,7 @@ public class PersonSkillContainsKeywordsPredicate implements Predicate<Person> {
     public boolean test(Person person) {
         return SkillUtil.match(keywords, person.getSkills());
     }
-    
+
     //@@author KevinCJH
     @Override
     public boolean equals(Object other) {
