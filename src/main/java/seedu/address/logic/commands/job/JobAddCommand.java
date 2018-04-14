@@ -26,7 +26,7 @@ public class JobAddCommand extends UndoableCommand {
             + PREFIX_TEAM + " "
             + PREFIX_LOCATION + " "
             + PREFIX_NUMBER_OF_POSITIONS + " "
-            + PREFIX_SKILL + "SKILL REQUIRED...";
+            + PREFIX_SKILL + " ";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a job opening to contactHeRo. "
             + "Parameters: "
