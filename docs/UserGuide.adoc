@@ -796,7 +796,7 @@ We are willing to help you. +
 The following sections summarize the commands you can use in contactHeRo.
 
 === Managing your contactHeRo account
-[width="99%",cols="25%,37%,37%",options="header",]
+[width="99%",cols="33%,33%,33%",options="header",]
 |===
 |Function |Command |Example
 |Logging in |`login` |`login u/Admin pw/ad123`
@@ -805,7 +805,7 @@ The following sections summarize the commands you can use in contactHeRo.
 |===
 
 === Managing Persons
-[width="99%",cols="25%,37%,37%",options="header",]
+[width="99%",cols="33%,33%,33%",options="header",]
 |===
 |Function |Command |Example
 |Adding a person. |`add n/NAME p/PHONE e/EMAIL a/ADDRESS cp/CURRENT_POSITION cc/COMPANY [pp/PROFILE PICTURE NAME] [s/SKILL]...` |`add n/John Doe p/98765432 e/johnd@example.com a/311, Clementi Ave 2, #02-25 cp/Software Engineer cc/Google pp//home/trafalgarandre/downloads/john.jpeg s/Java s/C++`
@@ -819,7 +819,7 @@ The following sections summarize the commands you can use in contactHeRo.
 |===
 
 === Managing Job Openings
-[width="99%",cols="25%,37%,37%",options="header",]
+[width="99%",cols="33%,33%,33%",options="header",]
 |===
 |Function |Command |Example
 |Adding a job opening. |`addjob p/POSITION t/TEAM l/LOCATION n/NUMBER OF POSITIONS s/SKILL REQUIRED...` |`addjob p/Software Engineer t/Cloud Services l/Singapore n/1 s/Java`
@@ -833,7 +833,7 @@ The following sections summarize the commands you can use in contactHeRo.
 |===
 
 === Managing Appointments
-[width="99%",cols="25%,37%,37%",options="header",]
+[width="99%",cols="33%,33%,33%",options="header",]
 |===
 |Function |Command |Example
 |Adding an appointment. |`addapp t/TITLE sdt/START_DATE_TIME edt/END_DATE_TIME` |`addapp t/Birthday sdt/2018-03-26 12:00 edt/2018-03-26 12:30`
@@ -841,7 +841,7 @@ The following sections summarize the commands you can use in contactHeRo.
 |===
 
 === Viewing the Calendar
-[width="99%",cols="25%,37%,37%",options="header",]
+[width="99%",cols="33%,33%,33%",options="header",]
 |===
 |Function |Command |Example
 |Opening the calendar. |`calendar` |`calendar`
@@ -853,7 +853,7 @@ The following sections summarize the commands you can use in contactHeRo.
 |===
 
 === Managing Emails
-[width="99%",cols="25%,37%,37%",options="header",]
+[width="99%",cols="33%,33%,33%",options="header",]
 |===
 |Function |Command |Example
 |Login to google |`googlelogin` |`googlelogin`
@@ -861,7 +861,7 @@ The following sections summarize the commands you can use in contactHeRo.
 |===
 
 === Utility Commands
-[width="99%",cols="25%,37%,37%",options="header",]
+[width="99%",cols="33%,33%,33%",options="header",]
 |===
 |Function |Command |Example
 |Viewing help. |`help` |`help`
