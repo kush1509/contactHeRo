@@ -115,9 +115,9 @@ public class CommandList {
 
         case AddAppointmentCommand.COMMAND_WORD:
             return AddAppointmentCommand.COMMAND_SYNTAX;
-            
+
         case LoginCommand.COMMAND_WORD:
-            return "login u/Admin pw/ad123";
+            return LoginCommand.COMMAND_SYNTAX;
 
         case UpdatePasswordCommand.COMMAND_WORD:
             return UpdatePasswordCommand.COMMAND_SYNTAX;
